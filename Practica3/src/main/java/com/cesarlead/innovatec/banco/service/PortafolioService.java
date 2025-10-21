@@ -1,21 +1,20 @@
 package com.cesarlead.innovatec.banco.service;
 
-import com.cesarlead.innovatec.banco.model.Cuenta;
 import com.cesarlead.innovatec.banco.dto.CuentaDTO;
+import com.cesarlead.innovatec.banco.model.Cuenta;
 import com.cesarlead.innovatec.banco.repository.CuentaRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
-public class PortfolioService {
+public class PortafolioService {
     private CuentaRepository cuentaRepository;
 
-    public List<Cuenta> getPortfolioFiltrado(Integer clienteId, String tipoCuenta, BigDecimal saldoMinimo) {
+    public List<Cuenta> getPortafolioFiltrado(Integer clienteId, String tipoCuenta, BigDecimal saldoMinimo) {
         List<Cuenta> cuentasDelCliente = cuentaRepository.buscarPorClienteId(clienteId);
         Stream<Cuenta> stream = cuentasDelCliente.stream();
 
@@ -26,7 +25,7 @@ public class PortfolioService {
             stream = stream.filter(c -> c.getSaldo().compareTo(saldoMinimo) > 0);
         }
 
+
         return stream.collect(Collectors.toList());
     }
-
 }
