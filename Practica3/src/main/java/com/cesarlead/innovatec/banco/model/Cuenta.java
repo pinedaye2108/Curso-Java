@@ -8,6 +8,9 @@ public class Cuenta {
     private String tipo;
     private String moneda;
     private BigDecimal saldo;
+
+    public Cuenta(Integer id, String tipo, String moneda, BigDecimal saldo) {
+    }
     // Getters, Setters y Constructor...
 
     //getters
@@ -17,36 +20,27 @@ public class Cuenta {
     public Integer getId() {
         return id;
     }
-
     public BigDecimal getSaldo() {
         return saldo;
     }
-
     public String getMoneda() {
         return moneda;
     }
-
     public String getTipo() {
         return tipo;
     }
 
     //setters
-    public void setClienteId(Integer clienteId) {
-        this.clienteId = clienteId;
-    }
-
+    public void setClienteId(Integer clienteId) {this.clienteId = clienteId;}
     public void setId(Integer id) {
         this.id = id;
     }
-
     public void setMoneda(String moneda) {
         this.moneda = moneda;
     }
-
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }

@@ -11,31 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/api/v1/cuenta")
-
-
+@RequestMapping("/api/v1/portfolios/clientes/{clienteId}/cuentas")
 public class PortfolioController {
-    private final PortfolioService.cuentaRepository;
-
-    public CuentaController(PortfolioService cuentaService) {
-        this.cuentaService = cuentaService;
-    }
-
-    @GetMapping
-    public List<Cuenta> Cuenta() {
-        return cuentaService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Cuenta> getCuentaById(@PathVariable Integer id) {
-        return cuentaService.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-}
-
-
 
 }

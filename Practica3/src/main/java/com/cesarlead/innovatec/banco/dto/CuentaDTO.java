@@ -1,4 +1,4 @@
-package com.cesarlead.innovatec.banco;
+package com.cesarlead.innovatec.banco.dto;
 
 import java.math.BigDecimal;
 
